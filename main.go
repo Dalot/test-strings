@@ -113,7 +113,8 @@ func storyStats(str string) *Stats {
 			stats.longestWord = w
 		}
 	}
-	if l := len(words); l > 0 {
+
+	if l := len(words); l > 0 && words[0] != "" {
 		stats.avgWordLength = sum / len(words)
 
 		for _, w := range words {
