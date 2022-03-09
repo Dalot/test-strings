@@ -87,8 +87,8 @@ type Stats struct {
 	avgWordLengthList []string
 }
 
-// I expect this one to take me 5-10mins
-// It took me around what I expected but I suppose there are bugs to be found when making the unit tests
+// Estimate: 5-10mins
+// Real: 5-10mins
 func storyStats(str string) *Stats {
 	stats := &Stats{}
 	maxLength := 0
