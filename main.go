@@ -38,8 +38,8 @@ func testValidity(str string) bool {
 	return true
 }
 
-// I assumed this one would be faster than the first one so, <5mins
-// Yes, this one took probably 1min
+// Estimate: <5mins
+// Real: <5mins
 func averageNumber(str string) int {
 	n := 0
 	sum := 0
