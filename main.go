@@ -35,3 +35,23 @@ func testValidity(str string) bool {
 
 	return true
 }
+
+// -Write a function averageNumber that takes the string, and returns the average number from all the numbers
+// I assumed this one would be faster than the first one so, <5mins
+// Yes, this one took probably 1min
+func averageNumber(str string) int {
+	n := 0
+	sum := 0
+
+	for _, char := range str {
+		if unicode.IsDigit(char) {
+			sum += int(char)
+			n++
+		}
+	}
+
+	if n == 0 {
+		return 0
+	}
+	return sum / n
+}
