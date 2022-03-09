@@ -4,6 +4,8 @@ import (
 	"testing"
 )
 
+// Estimate: 5mins
+// Real: 5mins
 func Test_testValidity(t *testing.T) {
 	tests := []struct {
 		name string
