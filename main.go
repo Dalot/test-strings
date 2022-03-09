@@ -6,7 +6,8 @@ import (
 	"unicode"
 )
 
-// I assumed it was going to take somewhat around 5mins. And it did the first version. Then I reiterated on it so the total must have been between 5-10mins
+// Estimate: 5mins
+// Real: <10mins
 func testValidity(str string) bool {
 	isDigitsSlot := true
 	l := len(str)
