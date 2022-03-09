@@ -54,3 +54,26 @@ func averageNumber(str string) int {
 	}
 	return sum / n
 }
+
+// I assume this one will take <5 mins
+// It tooks similar time than the averageNumber
+func wholeStory(str string) string {
+	res := ""
+	isLetters := false
+
+	for _, char := range str {
+
+		isDash := string(char) == "-"
+		if isDash && isLetters {
+			res += " "
+			isLetters = false
+			continue
+		}
+		if unicode.IsLetter(char) {
+			isLetters = true
+			res += string(char)
+		}
+	}
+
+	return res
+}
