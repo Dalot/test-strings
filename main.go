@@ -1,6 +1,8 @@
 package main
 
 import (
+	"math"
+	"strings"
 	"unicode"
 )
 
@@ -76,4 +78,47 @@ func wholeStory(str string) string {
 	}
 
 	return res
+}
+
+type Stats struct {
+	shortestWord      string
+	longestWord       string
+	avgWordLength     int
+	avgWordLengthList []string
+}
+
+// I expect this one to take me 5-10mins
+// It took me around what I expected but I suppose there are bugs to be found when making the unit tests
+func storyStats(str string) *Stats {
+	stats := &Stats{}
+	maxLength := 0
+	minLength := math.MaxInt
+	sum := 0
+
+	wholeStory := wholeStory(str)
+	words := strings.Split(wholeStory, " ")
+	for _, w := range words {
+		l := len(w)
+		sum += l
+		if l < minLength {
+			minLength = l
+			stats.shortestWord = w
+		}
+		if l > maxLength {
+			maxLength = l
+			stats.longestWord = w
+		}
+	}
+	if l := len(words); l > 0 {
+		stats.avgWordLength = sum / len(words)
+
+		for _, w := range words {
+			if len(w) == stats.avgWordLength {
+				stats.avgWordLengthList = append(stats.avgWordLengthList, w)
+			}
+		}
+	}
+
+	return stats
+
 }
