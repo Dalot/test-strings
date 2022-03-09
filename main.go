@@ -57,8 +57,8 @@ func averageNumber(str string) int {
 	return sum / n
 }
 
-// I assume this one will take <5 mins
-// It tooks similar time than the averageNumber
+// Estimate: <5 mins
+// Real: <5mins
 func wholeStory(str string) string {
 	res := ""
 	isLetters := false
