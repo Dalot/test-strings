@@ -52,6 +52,8 @@ func Test_testValidity(t *testing.T) {
 	}
 }
 
+// Estimate: 1mins
+// Real: 1mins
 func Test_averageNumber(t *testing.T) {
 	tests := []struct {
 		name string
@@ -67,6 +69,11 @@ func Test_averageNumber(t *testing.T) {
 			name: "success2",
 			str:  "22",
 			want: 2,
+		},
+		{
+			name: "success3",
+			str:  "1",
+			want: 1,
 		},
 	}
 	for _, tt := range tests {
