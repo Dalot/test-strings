@@ -49,3 +49,29 @@ func Test_testValidity(t *testing.T) {
 		})
 	}
 }
+
+func Test_averageNumber(t *testing.T) {
+	tests := []struct {
+		name string
+		str  string
+		want int
+	}{
+		{
+			name: "success",
+			str:  "23-ab-48-caba-56-haha",
+			want: 4,
+		},
+		{
+			name: "success2",
+			str:  "22",
+			want: 2,
+		},
+	}
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			if got := averageNumber(tt.str); got != tt.want {
+				t.Errorf("averageNumber() = %v, want %v", got, tt.want)
+			}
+		})
+	}
+}
