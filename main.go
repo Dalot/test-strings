@@ -78,6 +78,9 @@ func wholeStory(str string) string {
 		}
 	}
 
+	if strings.HasSuffix(res, " ") {
+		return res[:len(res)-1]
+	}
 	return res
 }
 
