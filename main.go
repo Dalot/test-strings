@@ -46,7 +46,7 @@ func averageNumber(str string) int {
 
 	for _, char := range str {
 		if unicode.IsDigit(char) {
-			sum += int(char)
+			sum += int(char - '0')
 			n++
 		}
 	}
