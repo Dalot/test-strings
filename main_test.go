@@ -84,3 +84,36 @@ func Test_averageNumber(t *testing.T) {
 		})
 	}
 }
+
+// Estimate: <5mins
+// Real: <5mins
+func Test_wholeStory(t *testing.T) {
+	tests := []struct {
+		name string
+		str  string
+		want string
+	}{
+		{
+			name: "success",
+			str:  "23-hello-55-world",
+			want: "hello world",
+		},
+		{
+			name: "success2",
+			str:  "23-hello",
+			want: "hello",
+		},
+		{
+			name: "success",
+			str:  "23-hello-99-world-333",
+			want: "hello world",
+		},
+	}
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			if got := wholeStory(tt.str); got != tt.want {
+				t.Errorf("wholeStory() = %v, want %v", got, tt.want)
+			}
+		})
+	}
+}
