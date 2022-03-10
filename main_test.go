@@ -24,6 +24,11 @@ func Test_testValidity(t *testing.T) {
 			want: true,
 		},
 		{
+			name: "success2",
+			str:  generate(true),
+			want: true,
+		},
+		{
 			name: "fail",
 			str:  "23-ab-4u-caba-56-haha",
 			want: false,
@@ -41,6 +46,11 @@ func Test_testValidity(t *testing.T) {
 		{
 			name: "fail4",
 			str:  "-23-ab-48-caba-56-haha",
+			want: false,
+		},
+		{
+			name: "fail5",
+			str:  generate(false),
 			want: false,
 		},
 	}
