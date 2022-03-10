@@ -12,7 +12,7 @@ func testValidity(str string) bool {
 	isDigitsSlot := true
 	l := len(str)
 
-	// this is safe becase we assume the string received has length larger than 0
+	// this is safe becase we assume the string received has length bigger than 0
 	firstChar := []rune(str)[0]
 	if !unicode.IsDigit(firstChar) {
 		return false
@@ -21,6 +21,7 @@ func testValidity(str string) bool {
 	for i, char := range str {
 		isDigit := unicode.IsDigit(char)
 		isLetter := unicode.IsLetter(char)
+		// check if the string is ending with anything other than digit or letter
 		if i == l-1 && !isDigit && !isLetter {
 			return false
 		}
